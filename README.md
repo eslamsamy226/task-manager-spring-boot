@@ -27,8 +27,9 @@ Before you begin, ensure you have the following setup:
 ## 🛢️Database
 - use [this script to setup the database schema on your system](https://github.com/eslamsamy226/taskManager/blob/main/databse.sql)
 - you [application.properties](https://github.com/eslamsamy226/taskManager/blob/main/src/main/resources/application.properties) file to add your database connection.
-- Here is an ER digram of the database
+- Here is an ER digram of the database:
 - ![https://github.com/eslamsamy226/taskManager/blob/main/er.PNG](https://github.com/eslamsamy226/taskManager/blob/main/er.PNG) 
 
-
+## 📽️Demo
+![https://github.com/eslamsamy226/taskManager/blob/main/demo.mp4](https://github.com/eslamsamy226/taskManager/blob/main/demo.mp4)
   
