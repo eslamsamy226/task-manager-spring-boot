@@ -31,5 +31,5 @@ Before you begin, ensure you have the following setup:
 - ![https://github.com/eslamsamy226/taskManager/blob/main/er.PNG](https://github.com/eslamsamy226/taskManager/blob/main/er.PNG) 
 
 ## 📽️Demo
-![https://github.com/eslamsamy226/taskManager/blob/main/demo.mp4](https://github.com/eslamsamy226/taskManager/blob/main/demo.mp4)
+[!(https://github.com/eslamsamy226/taskManager/blob/main/demo.mp4)](https://github.com/eslamsamy226/taskManager/blob/main/demo.mp4)
   
