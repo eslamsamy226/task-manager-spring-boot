@@ -49,6 +49,7 @@ public class UserServiceImpl implements UserService {
         user.setEnabled(true);
         user.setPassword(passwordEncoder.encode(webUser.getPassword()));
         user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_USER")));
+        System.out.println(user);
         userDao.save(user);
     }
 
