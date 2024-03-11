@@ -9,7 +9,7 @@ the following technologies has been used to facilitate the development proccess 
 - [Demo](#Demo)
 - [Resourses](#Resourses)
 
-  ## 🚀Features
+## 🚀Features
 
 - User registration and authentication.
 - Create, Read, Update, and Delete Task.
@@ -25,8 +25,10 @@ Before you begin, ensure you have the following setup:
 - Database setup in [Database](#Databsse) section.
 
 ## 🛢️Database
-- use 
-[https://github.com/Mohamad-shosha/CRUD-APP/assets/150439621/4d162eeb-76c0-419f-bf11-a95ec06f5d0](https://github.com/eslamsamy226/taskManager/blob/main/databse.sql)
+- use [this script to setup the database schema on your system](https://github.com/eslamsamy226/taskManager/blob/main/databse.sql)
+- you [application.properties](https://github.com/eslamsamy226/taskManager/blob/main/src/main/resources/application.properties) file to add your database connection.
+- Here is an ER digram of the database
+- (https://github.com/eslamsamy226/taskManager/blob/main/er.PNG) 
 
 
   
