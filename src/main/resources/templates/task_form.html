@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title th:text="${task.name}? 'Update Task':'Add Task'" />
+    <style>
+        .card {
+        width:50%;
+        margin-bottom:25px;
+}
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div  class="container-fluid">
+        <a th:href="@{/}"  class="navbar-brand">Task Manager</a>
+        <form class="d-flex" action="#" th:action="@{/logout}"
+              method="POST">
+
+            <input type="submit" value="Logout" class="btn btn-outline-primary mt-2" />
+        </form>
+    </div>
+</nav>
+<br>
+
+<div class="container">
+
+    <div id="loginbox" style="margin-top: 25px;"
+         class="col  justify-content-center">
+
+        <div class="card border-info justify-content-center">
+
+
+            <div class="card border-info ">
+
+                <div th:text="${task.name}?:'New Task'" class="card-header bg-info justify-content-center"/>
+            </div>
+
+            <div class="card-body justify-content-center">
+
+                <div class="card-text justify-content-center">
+
+
+                    <form th:action="@{/save}"
+                          th:object="${task}"
+                          method="POST"
+                          class="form-horizontal"
+                    >
+                        <input type="hidden" th:field="*{id}">
+                        <label th:if="${admin==1}">User ID :</label>
+                        <br th:if="${admin==1}">
+                        <br th:if="${admin==1}">
+                        <input class="form-control mb-w-25"
+                               placeholder="User ID" th:if="${admin==1}" type="number" th:field="*{user_id}">
+
+                        <input  type="hidden" th:attr="name='user_id'"
+                               th:value="${user_id}" id="user_id" name="user_id">
+
+                        <br>
+                        <input type="text" th:field="*{name}"
+                               class="form-control mb-w-25"
+                               placeholder="Task Name"
+                        >
+
+                        <br>
+
+                        <select class="form-select form-control mb-w-25" aria-label="Task Priority" th:field="*{priority}"  name="priority" id="priority"
+
+                        >
+                            <option value="High" selected>Task Priority</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                        <br>
+
+                        <select class="form-select form-control mb-w-25" aria-label="Task Status"  th:field="*{status}"  name="status" id="status"
+
+                        >
+                            <option value="Pending" selected>Task Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                        <br>
+                        <label for="due_date">Due Date:</label>
+
+                        <input type="datetime-local" id="due_date" th:field="*{dueDate}"
+                               class="form-control mb-w-25"
+                               placeholder="e-mail"
+                        >
+                        <br>
+                        <button type="submit" class="btn btn-info col-2">Add</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+

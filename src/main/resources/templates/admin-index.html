@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>Tasks</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a th:href="@{/}"  class="navbar-brand">Task Manager</a>
+            <form class="" th:action="@{/logout}"
+                  method="POST">
+                <input type="submit" value="Logout" class="btn btn-outline-primary mt-2" />
+            </form>
+        </div>
+    </nav>
+    <br>
+<h1>Welcome Admin !</h1>
+    <hr>
+
+    <h2>All Tasks : </h2>
+    <br>
+    <table class="table table-bordered ">
+        <thead class="table-light">
+        <tr>
+            <th>Name</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Due Date</th>
+            <th>User ID</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="task : ${tasks}" th:attr="class=${task.status=='Completed' ? 'table-success' :'table-light'}">
+
+            <td th:text="${task.name}" />
+            <td th:text="${task.priority}" />
+            <td th:text="${task.status}" />
+            <td th:text="${task.dueDate}" />
+            <td th:text="${task.user_id}" />
+            <td >
+                <a  th:href="@{/admin-complete_task(id=${task.id})}" onclick="checkFluency()"  id="checkbox-official" type="button" class="btn btn-success btn-sm">Complete</a>
+
+                <a th:href="@{/update_task(id=${task.id})}"
+                    class="btn btn-info btn-sm"
+            >
+                Update
+            </a>
+                <a th:href="@{/delete(id=${task.id})}"
+                   class="btn btn-danger btn-sm"
+                   onclick="if (!(confirm('Are you sure ypu want do delete this task'))) return false"
+                >
+                    Delete
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+    <h2>All Users : </h2>
+    <br>
+    <table class="table table-bordered ">
+        <thead class="table-light">
+        <tr>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Roles</th>
+
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="user : ${users}">
+
+            <td th:text="${user.id}" />
+            <td th:text="${user.userName}" />
+            <td th:text="${user.firstName}" />
+            <td th:text="${user.lastName}" />
+            <td th:text="${user.email}" />
+            <td>
+                <ul th:each="role : ${user.roles}">
+                    <li th:text="${role.name}"/>
+                </ul>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
