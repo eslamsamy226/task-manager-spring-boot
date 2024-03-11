@@ -79,7 +79,6 @@ public class TaskRestController {
     @GetMapping("/update_task")
     public String updateTaskForm(@RequestParam("id") int id,Model model){
         User user= (User) session.getAttribute("user");
-        model.addAttribute("user_id",user.getId());
         Task task = taskService.findById(id);
         System.out.println(task);
         if (task==null ||(task.getUser_id()!=user.getId() && !user.isAdmin()))
@@ -87,6 +86,8 @@ public class TaskRestController {
             return "redirect:/access-denied";
         }
         model.addAttribute("task",task);
+        model.addAttribute("user_id",task.getUser_id());
+
         return "task_form";
     }
     @GetMapping("complete_task")
