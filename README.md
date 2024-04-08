@@ -1,5 +1,5 @@
 # Task Manager Application Using Spring Boot
-This is my first **CRUD** (Create, Read, Update, Delete) application using spring boot, it's a user-friendly Task Management System. Built using java as a backend and bootstrap as a front-end. It features an authorities based user registration system.
+This is a **CRUD** (Create, Read, Update, Delete) application using spring boot, it's a user-friendly Task Management System. Built using java as a backend and bootstrap as a front-end. It features an authorities based user registration system.
 the following technologies have been used to facilitate the development proccess Spring Boot Web, Spring Data JPA & Hibernate, Spring Scurity, MySQL Database, Thymeleaf, HTML5 & Bootstrap Spring Data JPA Test.
 
 ## 📝Table of Contents
